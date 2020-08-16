@@ -1,129 +1,113 @@
-*
-{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.carousel-wrapper {
+  height: 50%;
+  width: 100%;
+  margin: 0 auto;
+}
+.wrapper {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* background: linear-gradient(-135deg,#c850c0, #4158d8);  */
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 0.3s ease-in-out;
 }
 
-.wrapper
-{
-     position: fixed; 
-     display: flex;
-     align-items: center;
-     top: 0; 
-     left: 0;
-     height: 100%; 
-     width: 100%; 
-     background: linear-gradient(-135deg,#c850c0, #4158d8); 
-     clip-path: circle(25px at calc(100% - 45px)45px); 
-     transition: all 0.3s ease-in-out; 
+#active:checked ~ .wrapper {
+  clip-path: circle(75%);
 }
 
-#active:checked ~.wrapper
-{
-    clip-path: circle(75%);
+.menu-btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 20px;
+  top: 20px;
+  z-index: 2;
+  text-align: center;
+  line-height: 50px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #c850c0, #4158d8);
 }
 
-
-.menu-btn
-{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    right: 20px;
-    top: 20px;
-    z-index: 2;
-    text-align: center;
-    line-height: 50px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-    background: linear-gradient(-135deg,#c850c0, #4158d8);
+#active:checked ~ .menu-btn {
+  background: #fff;
+  color: #4158d8;
 }
 
-
-#active:checked ~.menu-btn
-{
-    background: #fff;
-    color: #4158d8;
+#active:checked ~ .menu-btn i::before {
+  content: "";
 }
 
-#active:checked ~ .menu-btn i::before
-{
-    content: "";
+input {
+  display: none;
 }
 
-
-input
-{
-     display: none; 
+.wrapper ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
 }
 
-.wrapper ul{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    list-style: none;
-    text-align: center;
-
+.wrapper ul li {
+  margin: 15px 0;
 }
 
-
-.wrapper ul li{
-    margin: 15px 0;
+.wrapper ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5px 50px;
+  line-height: 50px;
+  transition: all 0.3s ease;
 }
 
-.wrapper ul li a 
-{
-    color: #fff;
-    text-decoration: none;
-    font-size: 30px;
-    font-weight: 500;
-    padding: 5px 50px;
-    line-height: 50px;
-    transition: all 0.3s ease;
-
+.wrapper ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  border-radius: 50px;
+  transform: scaleY(0);
+  z-index: -1;
+  transform: transform 0.3s ease;
 }
 
-.wrapper ul li a::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: #fff;
-    border-radius: 50px;
-    transform: scaleY(0); 
-    z-index: -1;
-    transform: transform 0.3s ease;
+.wrapper ul li a:hover::after {
+  transform: scaleY(1);
 }
 
-.wrapper  ul li a:hover::after
-{
-    transform: scaleY(1);
+.wrapper ul li a:hover {
+  color: #c850c0;
 }
-
-
-.wrapper ul li a:hover
-{
-    color: #c850c0;
-}
-
 
 /* slider */
 
-#slider .item
-{
-    height: 400px;
+#slider .item {
+  height: 400px;
 }
 
-#slide1
-{
-    background-image: url('images/slide1.jpg');
+#slide1 {
+  background-image: url("images/slide1.jpg");
 }
